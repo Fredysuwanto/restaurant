@@ -14,16 +14,8 @@
             "dest": "/public/css/"
         },
         {
-            "src": "assets/css/(.*)",
-            "dest": "/public/css/"
-        },
-        {
-            "src": "assets/img/(.*)",
-            "dest": "/public/img/"
-        },
-        {
-            "src": "assets/js/(.*)",
-            "dest": "/public/js/"
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/"
         },
         {
             "src": "/img/(.*)",
