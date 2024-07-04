@@ -87,6 +87,8 @@ class ReservasiController extends Controller
             'jumlah'=>"required|max:45",
             'nama'=>"required|max:45",
             'no_telpon'=>"required|max:45",
+            'tanggal_reservasi'=>"required",
+
         ]);
                 
         Reservasi::where('id', $reservasi['id'])->update($val);

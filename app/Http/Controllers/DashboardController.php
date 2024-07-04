@@ -16,4 +16,3 @@ class DashboardController extends Controller
     return view('dashboard')->with('jumlah_meja', $jumlah_meja);
     }
 }
-<h1></h1>
