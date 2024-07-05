@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Kasir;
 use App\Models\Pembayaran;
 
 use App\Models\Meja;
@@ -29,7 +31,8 @@ class PembayaranController extends Controller
         $reservasis = Reservasi::all();
         $meja = Meja::all();
         $menu = Menu::all();
-        return view('pembayaran.create')->with('reservasi', $reservasis)->with('meja', $meja)->with('menu',$menu);
+        $kasir = Kasir::all();
+        return view('pembayaran.create')->with('reservasi', $reservasis)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir);
     }
     
 
@@ -47,11 +50,11 @@ class PembayaranController extends Controller
             'meja_id'=>"required",
             'kasir_id'=>"required",
             'metode'=>"required",
-            'total'=>"required",
-            'aksi'=>"required",
+            'menu_id' => "required",
+            'jumlah'=>"required",
         ]);
         Pembayaran::create($val);
-        return redirect()->route('pembayaran.index')->with('success',$val['total'].' Berhasil disimpan');
+        return redirect()->route('pembayaran.index')->with('success',$val['jumlah'].' Berhasil disimpan');
     }
 
     /**
@@ -70,7 +73,8 @@ class PembayaranController extends Controller
         $reservasis = Reservasi::all();
         $meja = Meja::all();
         $menu = Menu::all();
-        return view('pembayaran.edit')->with('reservasi', $reservasis)->with('meja', $meja)->with('menu',$menu)->with('pembayaran',$pembayaran);
+        $kasir = Kasir::all();
+        return view('pembayaran.edit')->with('reservasi', $reservasis)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir)->with('pembayaran',$pembayaran);
     
     }
 
@@ -87,12 +91,11 @@ class PembayaranController extends Controller
             'meja_id'=>"required",
             'kasir_id'=>"required",
             'metode'=>"required",
-            'total'=>"required",
-            'aksi'=>"required",
-
+            'menu_id' => "required",
+            'jumlah'=>"required",
         ]);
         Pembayaran::where('id',$pembayaran['id'])->update($val);
-        return redirect()->route('pembayaran.index')->with('success',$val['total'].' Berhasil di edit');
+        return redirect()->route('pembayaran.index')->with('success',$val['jumlah'].' Berhasil di edit');
     }
 
     /**

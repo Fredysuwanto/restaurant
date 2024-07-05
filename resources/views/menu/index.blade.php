@@ -11,7 +11,7 @@
   }
   .card-img-top{
     width: 100%;
-    height: auto; 
+    height: 250px; 
     object-fit: cover; 
   }
   .menu-container {

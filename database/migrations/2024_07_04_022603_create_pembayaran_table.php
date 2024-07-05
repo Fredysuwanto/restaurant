@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreignId('meja_id');
             $table->foreignId('kasir_id');
             $table->string('metode');
-            $table->string('total');
+            $table->foreignId('menu_id');
+            $table->string('jumlah');
             $table->timestamps();
 
         });

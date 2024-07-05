@@ -11,7 +11,7 @@
   </style>
 <div class="tabel-kita">
     <h2 class="my-6 text-2xl font-semibold text-gray-700">
-        Reservasi
+        Kasir
       </h2>
 <br>
             <form method="POST" action="{{route('kasir.update',$kasir['id'])}}" class="forms-sample" enctype="multipart/form-data">
@@ -43,7 +43,7 @@
                 </div>
                 
                 <button type="submit" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Submit</button>
-                <a href="{{url('reservasi')}}"class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Batal</a>
+                <a href="{{url('kasir')}}"class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Batal</a>
             </form>
         </div>
     </div>

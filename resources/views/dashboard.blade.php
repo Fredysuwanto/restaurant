@@ -90,7 +90,7 @@
                     yAxis: {
                         min: 0,
                         title: {
-                            text: 'Jumlah Kasir'
+                            text: 'Jumlah Kasiry'
                         }
                     },
                     

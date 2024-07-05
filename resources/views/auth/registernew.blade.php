@@ -26,7 +26,7 @@
             <img
               aria-hidden="true"
               class="object-cover w-full h-full dark:hidden"
-              src="../assets/img/create-account-office.jpeg"
+              src="https://graphis-assets.s3.amazonaws.com/uploads/cfe/entry/41848257-2145-4dac-bbc7-8a407ad3e323/volta-duncanchannon-01-1.png"
               alt="Office"
             />
             <img

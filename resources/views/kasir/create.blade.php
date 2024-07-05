@@ -13,7 +13,7 @@
 
 <div class="tabel-kita">
     <h2 class="my-6 text-2xl font-semibold text-gray-700">
-        Reservasi
+        Kasir
       </h2>
   <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
@@ -28,7 +28,7 @@
                 @error('no_kasir')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
-            </div>>
+            </div>
             <div class="form-group">
               <label for="nama">Nama Kasir</label>
               <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="nama" name="nama" value="{{old('nama')}}"
@@ -41,7 +41,7 @@
                 <div class="form-group">
                     <label for="no_telp">Nomor Telepon</label>
                     <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="no_telp" name="no_telp" value="{{old('no_telp')}}"
-                        placeholder="P / L">
+                        placeholder="no_telp">
                     @error('no_telp')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

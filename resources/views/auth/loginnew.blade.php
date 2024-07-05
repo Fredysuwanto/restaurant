@@ -26,7 +26,7 @@
             <img
               aria-hidden="true"
               class="object-cover w-full h-full dark:hidden"
-              src="https://pbs.twimg.com/profile_images/990288326656741377/pTYQiZJM_400x400.jpg"
+              src="https://graphis-assets.s3.amazonaws.com/uploads/cfe/entry/41848257-2145-4dac-bbc7-8a407ad3e323/volta-duncanchannon-01-1.png"
               alt="Office"
             />
             <img
