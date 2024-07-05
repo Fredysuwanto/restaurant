@@ -18,9 +18,9 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        $pembayarans = Pembayaran::all();
+        $pembayaran = Pembayaran::all();
         return view('pembayaran.index')
-            ->with('pembayaran',$pembayarans);
+            ->with('pembayaran',$pembayaran);
     }
 
     /**
@@ -28,11 +28,11 @@ class PembayaranController extends Controller
      */
     public function create()
     {
-        $reservasis = Reservasi::all();
+        $reservasi = Reservasi::all();
         $meja = Meja::all();
         $menu = Menu::all();
         $kasir = Kasir::all();
-        return view('pembayaran.create')->with('reservasi', $reservasis)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir);
+        return view('pembayaran.create')->with('reservasi', $reservasi)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir);
     }
     
 
@@ -70,11 +70,11 @@ class PembayaranController extends Controller
      */
     public function edit(pembayaran $pembayaran)
     {
-        $reservasis = Reservasi::all();
+        $reservasi = Reservasi::all();
         $meja = Meja::all();
         $menu = Menu::all();
         $kasir = Kasir::all();
-        return view('pembayaran.edit')->with('reservasi', $reservasis)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir)->with('pembayaran',$pembayaran);
+        return view('pembayaran.edit')->with('reservasi', $reservasi)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir)->with('pembayaran',$pembayaran);
     
     }
 

@@ -15,9 +15,9 @@ class ReservasiController extends Controller
      */
     public function index()
     {
-        $reservasis = Reservasi::all();
+        $reservasi = Reservasi::all();
         return view('reservasi.index')
-            ->with('reservasi',$reservasis);
+            ->with('reservasi',$reservasi);
     }
 
     /**
