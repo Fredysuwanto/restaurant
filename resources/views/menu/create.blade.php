@@ -31,28 +31,28 @@
       </div>
           <div class="form-group">
             <label for="nomor_menu">Nomor Menu</label>
-              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id= "nomor_menu" name="nomor_menu" placeholder="Nomor Menu">
+              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id= "nomor_menu" name="nomor_menu" placeholder="Nomor Menu" value="{{old('nomor_menu')}}">
                 @error('nomor_menu')
                   <span class = "text-danger">{{$message }}</span>
                 @enderror
           </div>
           <div class="form-group">
             <label for="url_menu">Url Foto</label>
-            <input type="url" class="form-control" name="url_menu" placeholder="url">
+            <input type="url" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" name="url_menu" placeholder="url"  value="{{old('url_menu')}}">
             @error('url_menu')
               <span class = "text-danger">{{$message }}</span>
             @enderror
           </div>
           <div class="form-group">
             <label for="nama_menu">Nama Menu</label>
-              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id= "nama_menu" name="nama_menu" placeholder="Nama Menu">
+              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id= "nama_menu" name="nama_menu" placeholder="Nama Menu" value="{{old('nama_menu')}}">
                 @error('nama_menu')
                   <span class = "text-danger">{{$message }}</span>
                 @enderror
           </div>
           <div class="form-group">
             <label for="harga_menu">Harga Menu</label>
-              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id= "harga_menu" name="harga_menu" placeholder="Harga Menu">
+              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id= "harga_menu" name="harga_menu" placeholder="Harga Menu" value="{{old('harga_menu')}}">
                 @error('harga_menu')
                   <span class = "text-danger">{{$message }}</span>
                 @enderror

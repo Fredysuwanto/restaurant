@@ -30,7 +30,9 @@
     Reservasi Meja
   </h2>
   <div>
+    @can('create', App\Reservasi::class  )
     <a href="{{route('reservasi.create')}}" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Daftar</a>
+    @endcan
   </div><br>
   <div class="table-container">
     <table class="w-full whitespace-no-wrap">
@@ -54,13 +56,15 @@
           <td class="px-4 py-3 text-center">{{ $item["nama"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["no_telpon"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["tanggal_reservasi"] }}</td>
-          <td class="px-4 py-3 text-center">
+            <td>@can('delete', $item)
             <form action="{{route('reservasi.destroy', $item["id"])}}" method="post" style="display: inline">
               @method('DELETE')
               @csrf
               <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-red show_confirm" data-name="{{ $item['nama'] }}">Hapus</button>
             </form>
             <a href="{{route('reservasi.edit', $item["id"])}}" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-red">Edit</a>
+            @endcan
+
           </td>
         </tr>
         @endforeach

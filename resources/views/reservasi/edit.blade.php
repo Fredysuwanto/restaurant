@@ -62,25 +62,14 @@
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
-                
                 <div class="form-group">
                     <label for="tanggal_reservasi">Tanggal Reservasi</label>
-                    <input type="date" class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input" id="tanggal_reservasi" name="tanggal_reservasi" value="{{old('tanggal_reservasi') ? old('tanggal_reservasi'): $reservasi['tanggal_reservasi'] }}"
+                    <input type="datetime-local" class="block w-full mt-1 text-sm border-gray-600 bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple text-gray-300 focus:shadow-outline-gray form-input" id="tanggal_reservasi" name="tanggal_reservasi" value="{{old('tanggal_reservasi') ? old('tanggal_reservasi'): $reservasi['tanggal_reservasi'] }}"
                         placeholder="Pilih Tanggal Reservasi">
                     @error('tanggal_reservasi')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
-                </div>
-                <div class="form-group">
-                    <label for="pembayaran">Method Pembayaran</label>
-                      <select class="block w-full mt-1 text-sm form-multiselect focus:border-purple-400 focus:outline-none focus:shadow-outline-purple" name="pembayaran" placeholder="pembayaran">
-                        <option>Bank Mandiri</option>
-                        <option>Bank BCA</option>
-                        <option>Bank BSI</option>
-                        <option>Bank BRI</option>
-                        <option>DANA</option>
-                      </select>
-                  </div><br>
+                </div><br>
                 
                 
                 <button type="submit" class="px-3 py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Submit</button>

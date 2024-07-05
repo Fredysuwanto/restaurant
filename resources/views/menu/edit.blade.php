@@ -39,7 +39,7 @@
             </div>
         <div class="form-group">
                 <label for="url_menu">Url Foto</label>
-                <input type="url" class="form-control" name="url_menu">
+                <input type="url" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" name="url_menu" value="{{old('url_menu') ? old('url_menu'): $menu['url_menu'] }}">
                 @Error('url_menu')
                     <span class="text-danger">{{$message}}</span>
                 @enderror

@@ -27,10 +27,9 @@ class PembayaranController extends Controller
     public function create()
     {
         $reservasi = Reservasi::all();
-        $meja = Meja::all();
         $menu = Menu::all();
         $kasir = Kasir::all();
-        return view('pembayaran.create')->with('reservasi', $reservasi)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir);
+        return view('pembayaran.create')->with('reservasi', $reservasi)->with('menu',$menu)->with('kasir',$kasir);
     }
     
 
@@ -44,15 +43,14 @@ class PembayaranController extends Controller
         }
         // dd($request);
         $val = $request->validate([
-            'reservasi_id'=>"required|max:45",
-            'meja_id'=>"required",
+            'reservasi_id'=>"required|unique:reservasis",
             'kasir_id'=>"required",
             'metode'=>"required",
             'menu_id' => "required",
             'jumlah'=>"required",
         ]);
         Pembayaran::create($val);
-        return redirect()->route('pembayaran.index')->with('success',$val['jumlah'].' Berhasil disimpan');
+        return redirect()->route('pembayaran.index')->with('success','Pembayaran Berhasil disimpan');
     }
 
     /**
@@ -69,10 +67,9 @@ class PembayaranController extends Controller
     public function edit(pembayaran $pembayaran)
     {
         $reservasi = Reservasi::all();
-        $meja = Meja::all();
         $menu = Menu::all();
         $kasir = Kasir::all();
-        return view('pembayaran.edit')->with('reservasi', $reservasi)->with('meja', $meja)->with('menu',$menu)->with('kasir',$kasir)->with('pembayaran',$pembayaran);
+        return view('pembayaran.edit')->with('reservasi', $reservasi)->with('menu',$menu)->with('kasir',$kasir)->with('pembayaran',$pembayaran);
     
     }
 
@@ -85,8 +82,7 @@ class PembayaranController extends Controller
             abort(403);
         }
         $val = $request->validate([
-            'reservasi_id'=>"required|max:45",
-            'meja_id'=>"required",
+            'reservasi_id'=>"required|unique:reservasis",
             'kasir_id'=>"required",
             'metode'=>"required",
             'menu_id' => "required",

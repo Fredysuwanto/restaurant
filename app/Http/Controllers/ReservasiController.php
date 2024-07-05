@@ -79,14 +79,14 @@ class ReservasiController extends Controller
         }
         $val = $request->validate([
             'meja_id'=>"required",
-            'no_reservasi' => "required",
+            'no_reservasi' => "required|unique:reservasis",
             'menu_id'=>"required",
             'nama'=>"required|max:45",
             'no_telpon'=>"required|max:45",
             'tanggal_reservasi'=>"required",
 
         ]);
-                
+        
         Reservasi::where('id', $reservasi['id'])->update($val);
         return redirect()->route('reservasi.index')->with('success',$val['nama'].' Berhasil di Edit');
     }

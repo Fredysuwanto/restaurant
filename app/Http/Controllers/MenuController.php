@@ -75,30 +75,37 @@ class MenuController extends Controller
     {
         $menu = Menu::find($id);
         $kategori = Kategori::all();
-        return view('menu.edit')->with('kategori',$kategori)->with('menu',$menu);
+        return view('menu.edit', compact('menu'))->with('kategori',$kategori)->with('menu',$menu);
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,Menu $menu)
-    {
-        if ($request->user()->cannot('create',Menu::class)){
-            abort(403);
-        }
-        $val = $request->validate([
-            'kategori_id' => "required",
-            'nomor_menu' => "required",
-            'url_menu' => "required|url",
-            'nama_menu' => "required",
-            'harga_menu' => "required",
-        ]);
-        $menu = Menu::find($val);
-        Menu::where('id', $menu['id'])->update($val);
-        return redirect()->route('menu.index')->with('success',$val['nama_menu'].' Berhasil di Edit');
+    public function update(Request $request, $id)
+{
+    if ($request->user()->cannot('create', Menu::class)) {
+        abort(403);
     }
 
+    $val = $request->validate([
+        'kategori_id' => "required",
+        'nomor_menu' => "required|unique:menus,nomor_menu," . $id, // Tambahkan pengecualian id
+        'url_menu' => "required|url",
+        'nama_menu' => "required",
+        'harga_menu' => "required",
+    ]);
+
+    // Cari menu berdasarkan id
+    $menu = Menu::find($id);
+
+    if ($menu) {
+        $menu->update($val);
+        return redirect()->route('menu.index')->with('success', $val['nama_menu'] . ' Berhasil di Edit');
+    } else {
+        return redirect()->route('menu.index')->with('error', 'Menu tidak ditemukan');
+    }
+}
     /**
      * Remove the specified resource from storage.
      */

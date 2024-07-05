@@ -35,8 +35,7 @@
           <thead>
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50">
               <th class="text-center">No Reservasi</th>
-             <th class="text-center">No Meja</th>
-             <th class="text-center">No Kasir</th>
+             <th class="text-center">Nama Kasir</th>
               <th class="text-center">Metode Pembayaran</th>
               <th class="text-center">Harga</th>
               <th class="text-center">Jumlah</th>
@@ -48,8 +47,7 @@
             @foreach ($pembayaran as $item)
         <tr>
           <td class="px-4 py-3 text-center">{{ $item["reservasi"]["no_reservasi"] }}</td>
-          <td class="px-4 py-3 text-center">{{ $item["meja"]["nomor_meja"] }}</td>
-          <td class="px-4 py-3 text-center">{{ $item["kasir"]["no_kasir"] }}</td>
+          <td class="px-4 py-3 text-center">{{ $item["kasir"]["nama"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["metode"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["menu"]["harga_menu"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item['jumlah'] }}</td>
@@ -90,7 +88,7 @@
           let name = $(this).data("name");
           event.preventDefault();
           Swal.fire({
-            title: " Yakin " + name + " Data ingin hapus?",
+            title: " Yakin Data ingin hapus?",
             text: "Data tidak bisa di kembalikan!",
             icon: "warning",
             showCancelButton: true,

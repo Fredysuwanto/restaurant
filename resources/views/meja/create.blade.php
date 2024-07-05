@@ -23,14 +23,14 @@
         @csrf
           <div class="form-group">
             <label for="nomor_meja">Nomor Meja</label>
-              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" name="nomor_meja" placeholder="Nomor Meja">
+              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" name="nomor_meja" placeholder="Nomor Meja"value="{{old('nomor_meja')}}">
                 @error('nomor_meja')
                   <span class = "text-danger">{{$message }}</span>
                 @enderror
           </div>
           <div class="form-group">
             <label for="kuantitas_kursi">Kuantitas Kursi</label>
-              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" name="kuantitas_kursi" placeholder="Kuantitas Kursi">
+              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" name="kuantitas_kursi" placeholder="Kuantitas Kursi"value="{{old('kuantitas_kursi')}}">
                 @error('kuantitas_kursi')
                   <span class = "text-danger">{{$message }}</span>
                     @enderror
@@ -38,14 +38,14 @@
         <br>
           <div class="form-group">
             <label for="jenis_meja">Jenis Meja</label>
-              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="jenis_meja"  name="jenis_meja" placeholder="Jenis Meja">
+              <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="jenis_meja"  name="jenis_meja" placeholder="Jenis Meja"value="{{old('jenis_meja')}}">
                 @error('jenis_meja')
                   <span class = "text-danger">{{$message }}</span>
                 @enderror
           </div>
           <div class="form-group">
             <label for="status_meja">Status</label>
-              <select class="block w-full mt-1 text-sm form-multiselect focus:border-purple-400 focus:outline-none focus:shadow-outline-purple" name="status_meja" placeholder="Status">
+              <select class="block w-full mt-1 text-sm form-multiselect focus:border-purple-400 focus:outline-none focus:shadow-outline-purple" name="status_meja" placeholder="Status"value="{{old('status_meja')}}">
                 <option>Available</option>
                 <option>Reserved</option>
                 <option>Closed</option>

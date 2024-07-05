@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('reservasi_id')->constrained();
-            $table->foreignId('meja_id');
             $table->foreignId('kasir_id')->constrained();
             $table->string('metode');
             $table->foreignId('menu_id');

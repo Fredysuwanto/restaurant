@@ -18,7 +18,7 @@
                 @method('PUT')
                 @csrf
                 <div class="form-group">
-                    <label for="no_kasir">Nomor Kasir </label>
+                    <label for="no_kasir">Nama Kasir </label>
                         <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="no_kasir" name="no_kasir" value="{{old('no_kasir') ? old('no_kasir') : $kasir['no_kasir'] }}"
                             placeholder="Masukan Nomor Kasir">
                         @error('no_kasir')

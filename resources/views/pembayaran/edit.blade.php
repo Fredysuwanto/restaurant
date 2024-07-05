@@ -29,21 +29,11 @@
       </select>
       </div>
       <div class="form-group">
-          <label class="block text-sm" for="meja_id">No Meja</label>
-          <select class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"  id="meja_id" name="meja_id" >
-              @foreach ($meja as $items)
-              <option value="{{$items['id']}}">
-                  {{$items['nomor_meja']}}
-              </option>
-          @endforeach
-      </select>
-      </div>
-      <div class="form-group">
-        <label class="block text-sm" for="no_kasir">No Kasir</label>
+        <label class="block text-sm" for="kasir_id">No Kasir</label>
         <select class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"  id="kasir_id" name="kasir_id" >
             @foreach ($kasir as $items)
             <option value="{{$items['id']}}">
-                {{$items['no_kasir']}}
+                {{$items['nama']}}
             </option>
         @endforeach
     </select>
