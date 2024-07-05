@@ -16,7 +16,6 @@ return new class extends Migration
             $table->foreignId('meja_id')->constrained();
             $table->string('no_reservasi');
             $table->foreignId('menu_id')->constrained();
-            $table->integer('jumlah');
             $table->string('nama');
             $table->string('no_telpon');
             $table->string('tanggal_reservasi');

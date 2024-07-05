@@ -39,7 +39,6 @@
           <th class="text-center">No Meja</th>
           <th class="text-center">No Reservasi</th>
           <th class="text-center">Pesanan</th>
-          <th class="text-center">Jumlah</th>
           <th class="text-center">Nama</th>
           <th class="text-center">No Telpon</th>
           <th class="text-center">Tanggal Reservasi</th>
@@ -52,7 +51,6 @@
           <td class="px-4 py-3 text-center">{{ $item["meja"]["nomor_meja"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["no_reservasi"]}}</td>
           <td class="px-4 py-3 text-center">{{ $item["menu"]["nama_menu"] }}</td>
-          <td class="px-4 py-3 text-center">{{ $item["jumlah"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["nama"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["no_telpon"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["tanggal_reservasi"] }}</td>

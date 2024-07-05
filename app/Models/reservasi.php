@@ -9,7 +9,7 @@ class Reservasi extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'meja_id','no_reservasi','menu_id','jumlah','nama','no_telpon','tanggal_reservasi'];
+        'meja_id','no_reservasi','menu_id','nama','no_telpon','tanggal_reservasi'];
 
       
         public function meja()

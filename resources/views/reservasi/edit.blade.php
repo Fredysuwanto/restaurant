@@ -45,15 +45,7 @@
                         </option>
                     @endforeach
                 </select>
-                </div>
-                <div class="form-group">
-                    <label for="jumlah">Jumlah Pesan</label>
-                    <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="jumlah" name="jumlah" value="{{old('jumlah')? old('jumlah') : $reservasi['jumlah'] }}"
-                        placeholder="Jumlah Pesan">
-                    @error('jumlah')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
-                </div>
+
                 <div class="form-group">
                     <label for="nama">Nama </label>
                         <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="nama" name="nama" value="{{old('nama') ? old('nama') : $reservasi['nama'] }}"
