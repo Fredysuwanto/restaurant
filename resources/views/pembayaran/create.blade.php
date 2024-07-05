@@ -17,17 +17,6 @@
       </h2>
             <form method="POST" action="{{route('pembayaran.store')}}" class="forms-sample" enctype="multipart/form-data">
                 @csrf
-                
-                <div class="form-group">
-                    <label class="block text-sm" for="meja_id">Nomor Meja</label>
-                    <select class="block w-full mt-1 text-sm dark:text-gray-300 border-gray-600 bg-gray-700 form-multiselect focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"  id="meja_id" name="meja_id" >
-                        @foreach ($meja as $items)
-                        <option value="{{$items['id']}}">
-                            {{$items['nomor_meja']}}
-                        </option>
-                    @endforeach
-                </select>
-                </div>
 
                 <div class="form-group">
                     <label class="block text-sm" for="reservasi_id">No Reservasi</label>
@@ -49,7 +38,16 @@
                     @endforeach
                 </select>
                 </div>
-
+                <div class="form-group">
+                    <label class="block text-sm" for="kasir_id">No Kasir</label>
+                    <select class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input"  id="kasir_id" name="kasir_id" >
+                        @foreach ($kasir as $items)
+                        <option value="{{$items['id']}}">
+                            {{$items['no_kasir']}}
+                        </option>
+                    @endforeach
+                </select>
+                </div>
                 <div class="form-group">
                     <label for="metode">Metode Pembayaran</label>
                     <input type="text" class="block w-full mt-1 text-sm focus:border-purple-400 focus:outline-none focus:shadow-outline-purple form-input" id="metode" name="metode" 

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
 use App\Models\Meja;
 use App\Models\Menu;
 use App\Models\Reservasi;
@@ -57,7 +56,7 @@ class ReservasiController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(reservasi $reservasi)
+    public function show(Reservasi $reservasi)
     {
         //
     }
@@ -65,7 +64,7 @@ class ReservasiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(reservasi $reservasi)
+    public function edit(Reservasi $reservasi)
     {
         $meja = Meja::all();
         $menu = Menu::all();
@@ -75,7 +74,7 @@ class ReservasiController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, reservasi $reservasi)
+    public function update(Request $request, Reservasi $reservasi)
     {
         if ($request->user()->cannot('create',Reservasi::class)){
             abort(403);
@@ -98,7 +97,7 @@ class ReservasiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(reservasi $reservasi)
+    public function destroy(Reservasi $reservasi)
     {
        
         $reservasi->delete(); // hapus data mahasiswa

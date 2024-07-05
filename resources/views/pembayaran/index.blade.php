@@ -28,6 +28,7 @@
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50">
               <th class="text-center">No Reservasi</th>
              <th class="text-center">No Meja</th>
+             <th class="text-center">No Kasir</th>
               <th class="text-center">Metode Pembayaran</th>
              <th class="text-center">Total Pesanan</th>
               <th class="text-center">Aksi</th>
@@ -38,6 +39,7 @@
         <tr>
           <td class="px-4 py-3 text-center">{{ $item["reservasi"]["no_reservasi"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["meja"]["nomor_meja"] }}</td>
+          <td class="px-4 py-3 text-center">{{ $item["kasir"]["no_kasir"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["metode"] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["reservasi"]["jumlah"]*$item['menu']['harga_menu']}}</td>
           <td class="px-4 py-3 text-center">{{ $item["aksi"]}}</td>

@@ -73,24 +73,24 @@
                         type: 'column'
                     },
                     title: {
-                        text: 'Grafik Meja diambil berdasarkan Reservasi',
+                        text: 'Grafik Kasir diambil berdasarkan Pembayaran',
                         align: 'center'
                     },
                     xAxis: {
                         categories: [
-                            @foreach ($jumlah_meja as $item)
-                                '{{ $item->nomor_meja}}',
+                            @foreach ($jumlah_kasir as $item)
+                                '{{ $item->no_kasir}}',
                             @endforeach
                         ],
                         crosshair: true,
                         accessibility: {
-                            description: 'Meja'
+                            description: 'Kasir'
                         }
                     },
                     yAxis: {
                         min: 0,
                         title: {
-                            text: 'Jumlah Meja'
+                            text: 'Jumlah Kasir'
                         }
                     },
                     
@@ -105,9 +105,9 @@
                     },
                     series: [
                         {
-                            name: 'Meja',
+                            name: 'Kasir',
                             data: [
-                                @foreach ($jumlah_meja as $item)
+                                @foreach ($jumlah_kasir as $item)
                                     {{ $item->jumlah }},
                                 @endforeach    
                             ]

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('reservasi_id')->constrained();
             $table->foreignId('meja_id');
+            $table->foreignId('kasir_id');
             $table->string('metode');
             $table->string('total');
             $table->timestamps();

@@ -45,6 +45,7 @@ class PembayaranController extends Controller
         $val = $request->validate([
             'reservasi_id'=>"required|max:45",
             'meja_id'=>"required",
+            'kasir_id'=>"required",
             'metode'=>"required",
             'total'=>"required",
             'aksi'=>"required",
@@ -84,6 +85,7 @@ class PembayaranController extends Controller
         $val = $request->validate([
             'reservasi_id'=>"required|max:45",
             'meja_id'=>"required",
+            'kasir_id'=>"required",
             'metode'=>"required",
             'total'=>"required",
             'aksi'=>"required",
