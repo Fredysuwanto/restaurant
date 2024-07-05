@@ -16,8 +16,8 @@ class ReservasiController extends Controller
     public function index()
     {
         $reservasi = Reservasi::all();
-        return view('reservasi.index')
-            ->with('reservasi',$reservasi);
+        return view ('reservasi.index')
+            -> with ('reservasi',$reservasi);
     }
 
     /**
@@ -27,8 +27,7 @@ class ReservasiController extends Controller
     {
         $meja = Meja::all();
         $menu = Menu::all();
-        return view('reservasi.create')->with('menu',$menu)->with('meja',$meja);
-        
+        return view ('reservasi.create')-> with ('menu',$menu)->with('meja',$meja);
     }
 
     /**
@@ -41,7 +40,7 @@ class ReservasiController extends Controller
         }
         $val = $request->validate([
             'meja_id'=>"required",
-            'no_reservasi' => "required",
+            'no_reservasi' => "required|unique:reservasis",
             'menu_id'=>"required",
             'nama'=>"required|max:45",
             'no_telpon'=>"required|max:45",
@@ -67,7 +66,7 @@ class ReservasiController extends Controller
     {
         $meja = Meja::all();
         $menu = Menu::all();
-        return view('reservasi.edit')->with('meja',$meja)->with('menu',$menu)->with('reservasi',$reservasi);
+            return view('reservasi.edit')->with('meja',$meja)->with('menu',$menu)->with('reservasi',$reservasi);
     }
 
     /**
