@@ -89,7 +89,7 @@ class MenuController extends Controller
         }
         $val = $request->validate([
             'kategori_id' => "required",
-            'nomor_menu' => "required|unique:menus",
+            'nomor_menu' => "required",
             'url_menu' => "required|url",
             'nama_menu' => "required",
             'harga_menu' => "required",
