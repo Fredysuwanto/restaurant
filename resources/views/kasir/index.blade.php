@@ -19,8 +19,8 @@
   <h2 class="my-6 text-2xl font-semibold text-gray-700">
 Kasir
   </h2>
-  @can('create', App\kasir::class)
-    <a href="{{route('kasir.create')}}" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Tambah Menu</a>
+  @can('create', App\Kasir::class)
+    <a href="{{route('kasir.create')}}" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Tambah Kasir</a>
     @endcan
   </div><br>
   <div class="table-container tabel-kita">

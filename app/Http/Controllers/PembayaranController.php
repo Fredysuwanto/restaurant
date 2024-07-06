@@ -43,7 +43,7 @@ class PembayaranController extends Controller
         }
         // dd($request);
         $val = $request->validate([
-            'reservasi_id'=>"required|unique:reservasis",
+            'reservasi_id'=>"required",
             'kasir_id'=>"required",
             'metode'=>"required",
             'menu_id' => "required",
@@ -82,7 +82,7 @@ class PembayaranController extends Controller
             abort(403);
         }
         $val = $request->validate([
-            'reservasi_id'=>"required|unique:reservasis",
+            'reservasi_id'=>"required",
             'kasir_id'=>"required",
             'metode'=>"required",
             'menu_id' => "required",

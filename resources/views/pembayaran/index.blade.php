@@ -25,8 +25,7 @@
     Halaman Pembayaran
   </h2>
   @can('create', App\Pembayaran::class)
-  <a href="{{route('pembayaran.create')}}" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Tambah</a>
-
+  <a href="{{route('pembayaran.create')}}" class="px-5 py-3 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Tambah Pembayaran</a>
     @endcan
     
     <div><br>
@@ -35,7 +34,7 @@
           <thead>
             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50">
               <th class="text-center">No Reservasi</th>
-             <th class="text-center">Nama Kasir</th>
+              <th class="text-center">Nama Kasir</th>
               <th class="text-center">Metode Pembayaran</th>
               <th class="text-center">Harga</th>
               <th class="text-center">Jumlah</th>
@@ -53,13 +52,15 @@
           <td class="px-4 py-3 text-center">{{ $item['jumlah'] }}</td>
           <td class="px-4 py-3 text-center">{{ $item["jumlah"]*$item['menu']['harga_menu']}}</td>
           <td class="px-4 py-3 text-center">
-                <form action="{{route('pembayaran.destroy', $item["id"])}}" method="post" style="display: inline">
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-red show_confirm" data-name="{{ $item['nama'] }}">Hapus</button>
-                </form>
-                <a href="{{route('pembayaran.edit', $item["id"])}}" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-red">Edit</a>
-       
+            @can('delete', $item)
+            <form action="{{route('pembayaran.destroy', $item["id"])}}" method="post" style="display: inline">
+              @method('DELETE')
+              @csrf
+              <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-red show_confirm" data-name="{{ $item['nama'] }}">Hapus</button>
+          </form>
+          <a href="{{route('pembayaran.edit', $item["id"])}}" class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-red-600 border border-transparent rounded-lg active:bg-red-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-red">Edit</a>
+
+            @endcan
           </td>
         </tr>
       @endforeach
